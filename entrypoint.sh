@@ -43,6 +43,7 @@ if [ "${INPUT_SNAPSHOT}" == "true" ]; then
   docker push ${DOCKERNAME}
   docker push ${SHA_DOCKER_NAME}
 else
+  echo $CUSTOMDOCKERFILE;
   docker build $CUSTOMDOCKERFILE -t ${DOCKERNAME} .
   docker push ${DOCKERNAME}
 fi
